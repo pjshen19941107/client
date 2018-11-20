@@ -1,0 +1,48 @@
+<head>
+  <!-- This is the title of my app -->
+  <title>My Chatbot</title>
+</head>
+<body>
+  <center>
+
+    <!--
+  <img src="http://38.media.tumblr.com/fe87cc0ba50ea6f7e75094ef51529f72/tumblr_nw1d3tLQHd1udvy5wo1_500.gif" id = "eyesObj" /><br/>
+  <img src="https://us.123rf.com/450wm/branche/branche1303/branche130300633/18464628-nose-vector-illustration.jpg?ver=6" id= "noseObj" /><br/>
+  !-->
+   {{#if checkCurrentPage "frontPage"}}
+        {{> frontPage}}
+   {{else}}
+        {{> mainSection}}
+        {{> formSection}} 
+   {{/if}}
+
+
+   
+  
+   
+  </center>
+  
+</body>
+<template name = "frontPage">
+  <h1>Welcome!</h1>
+  <input type="button" id = "enterMain" value="Enter" />
+
+</template>
+
+
+<template name = "mainSection">
+  
+  <h1>
+    <a href = "https://en.wikipedia.org/wiki/ELIZA" target = "_blank">This is my ELIZA!</a>
+  </h1>
+    <textarea id = "conversationBox" rows = "20" cols = "80" readonly>ELIZA: How are you doing?</textarea><br/>
+</template>
+
+<template name = "formSection">
+  <form>
+
+      <input type = "text" id = "myMsg" size = "80" placeholder = "Please enter your message here..." /><br/>
+      <input type = "submit" id = "submitMsg" class = "button" value = "Submit" />
+      <input type = "reset" id = "resetMsg" class = "button" value = "Reset" />
+  </form>
+</template>
